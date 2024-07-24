@@ -1,6 +1,6 @@
-const { DefaultAzureCredential } = require('@azure/identity');
+const { ClientSecretCredential } = require('@azure/identity');
 const { SecretClient } = require('@azure/keyvault-secrets');
-const process = require('process');
+require('dotenv').config(); // Load environment variables from .env file
 
 async function main() {
     // Get environment variables
@@ -21,11 +21,7 @@ async function main() {
     }
 
     // Create a credential using the ClientSecretCredential
-    const credential = new DefaultAzureCredential({
-        clientId,
-        tenantId,
-        clientSecret
-    });
+    const credential = new ClientSecretCredential(tenantId, clientId, clientSecret);
 
     // Initialize the Key Vault client
     const client = new SecretClient(keyvaultUrl, credential);
