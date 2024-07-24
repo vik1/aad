@@ -57,10 +57,10 @@ func main() {
 	for {
 		secretBundle, err := client.GetSecret(context.Background(), secretName, "", nil)
 		if err != nil {
-			log.ErrorS(err, "failed to get secret from keyvault", "keyvault", keyvaultURL, "secretName", secretName)
+			log.Printf(err, "failed to get secret from keyvault", "keyvault", keyvaultURL, "secretName", secretName)
 			//os.Exit(1)
 		} 
-		log.InfoS("successfully got secret", "secret", *secretBundle.Value)
+		log.Printf("successfully got secret", "secret", *secretBundle.Value)
 
 		// wait for 60 seconds before polling again
 		time.Sleep(60 * time.Second)
