@@ -60,7 +60,7 @@ func main() {
 			log.Printf("failed to get secret from keyvault")
 			//os.Exit(1)
 		} 
-		log.Printf("successfully got secret", "secret", *secretBundle.Value)
+		log.Printf("successfully got secret")
 
 		// wait for 60 seconds before polling again
 		time.Sleep(60 * time.Second)
