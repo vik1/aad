@@ -57,7 +57,7 @@ func main() {
 	for {
 		secretBundle, err := client.GetSecret(context.Background(), secretName, "", nil)
 		if err != nil {
-			log.Printf(err, "failed to get secret from keyvault", "keyvault", keyvaultURL, "secretName", secretName)
+			log.Printf("failed to get secret from keyvault")
 			//os.Exit(1)
 		} 
 		log.Printf("successfully got secret", "secret", *secretBundle.Value)
