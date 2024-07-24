@@ -4,7 +4,7 @@ import (
 	"context"
 	"os"
 	"time"
-        "github.com/Azure/azure-sdk-for-go/sdk/azidentity"
+
 	"github.com/Azure/azure-sdk-for-go/sdk/keyvault/azsecrets"
 	"log"
 )
